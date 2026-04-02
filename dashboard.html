@@ -4,115 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Dashboard - UXA Global</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <style>
-        .dashboard-page { padding-top: 120px; padding-bottom: 60px; }
-        .dashboard-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-        .dashboard-title h1 { font-size: 32px; }
-        .dashboard-title p { color: var(--text-muted); }
+        .dashboard-page { padding: 30px 0; }
+        .dashboard-container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
         
-        .dashboard-layout { display: grid; grid-template-columns: 250px 1fr; gap: 30px; }
-        
-        .dashboard-sidebar { background: var(--bg-card); border-radius: 16px; padding: 30px; border: 1px solid var(--border); height: fit-content; }
-        .sidebar-user { text-align: center; padding-bottom: 25px; border-bottom: 1px solid var(--border); margin-bottom: 25px; }
-        .user-avatar {
-            width: 80px; height: 80px; border-radius: 50%;
-            background: var(--gradient);
-            margin: 0 auto 15px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 32px;
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
         }
-        .user-name { font-size: 20px; font-weight: 600; }
-        .user-email { font-size: 14px; color: var(--text-muted); }
-        .user-tier { 
-            display: inline-block; background: var(--accent); 
-            color: white; padding: 5px 15px; border-radius: 20px;
-            font-size: 12px; margin-top: 10px;
-        }
+        .dashboard-header h1 { font-size: 28px; color: var(--primary); }
         
-        .sidebar-menu { display: flex; flex-direction: column; gap: 10px; }
-        .sidebar-menu a {
-            padding: 15px 20px; border-radius: 10px;
-            color: var(--text-muted); transition: all 0.3s;
-        }
-        .sidebar-menu a:hover, .sidebar-menu a.active {
-            background: var(--bg);
-            color: var(--accent);
-        }
-        
-        .dashboard-content { display: flex; flex-direction: column; gap: 30px; }
-        
-        .stats-grid {
+        .stats-row {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
+            margin-bottom: 30px;
         }
         .stat-card {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 25px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            text-align: center;
         }
-        .stat-card-icon {
-            width: 50px; height: 50px; border-radius: 12px;
-            background: var(--bg); display: flex; align-items: center;
-            justify-content: center; font-size: 24px; margin-bottom: 15px;
+        .stat-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
         }
-        .stat-card-value { font-size: 32px; font-weight: 700; }
-        .stat-card-label { color: var(--text-muted); font-size: 14px; }
+        .stat-card .value {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .stat-card .label {
+            color: var(--gray);
+            font-size: 14px;
+        }
         
-        .content-section {
-            background: var(--bg-card); border: 1px solid var(--border);
-            border-radius: 16px; padding: 30px;
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
         }
-        .section-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 25px;
-        }
-        .section-title { font-size: 20px; font-weight: 600; }
         
-        .activity-list { display: flex; flex-direction: column; gap: 15px; }
-        .activity-item {
-            display: flex; align-items: center; gap: 20px;
-            padding: 20px; background: var(--bg); border-radius: 12px;
+        .sidebar-menu {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        .activity-icon {
-            width: 50px; height: 50px; border-radius: 12px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 24px;
-        }
-        .activity-icon.winning { background: rgba(78, 205, 196, 0.2); }
-        .activity-icon.outbid { background: rgba(255, 77, 0, 0.2); }
-        .activity-icon.won { background: rgba(78, 205, 196, 0.2); }
-        
-        .activity-info { flex: 1; }
-        .activity-title { font-weight: 600; margin-bottom: 5px; }
-        .activity-meta { font-size: 14px; color: var(--text-muted); }
-        .activity-price { font-size: 20px; font-weight: 700; color: var(--accent); }
-        
-        .watch-list { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .watch-item {
-            background: var(--bg); border-radius: 12px; overflow: hidden;
+        .sidebar-menu a {
+            display: block;
+            padding: 15px 20px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            color: var(--dark);
             transition: all 0.3s;
         }
-        .watch-item:hover { transform: translateY(-5px); }
-        .watch-img { height: 120px; overflow: hidden; }
-        .watch-img img { width: 100%; height: 100%; object-fit: cover; }
-        .watch-info { padding: 15px; }
-        .watch-title { font-weight: 600; font-size: 14px; margin-bottom: 8px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-        .watch-price { font-size: 18px; font-weight: 700; color: var(--accent); }
-        .watch-ends { font-size: 12px; color: var(--text-muted); }
+        .sidebar-menu a:hover,
+        .sidebar-menu a.active {
+            background: var(--primary);
+            color: white;
+        }
         
-        @media (max-width: 1200px) {
-            .stats-grid { grid-template-columns: repeat(2, 1fr); }
-            .watch-list { grid-template-columns: repeat(2, 1fr); }
+        .content-area {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
-        @media (max-width: 768px) {
-            .dashboard-layout { grid-template-columns: 1fr; }
-            .stats-grid { grid-template-columns: 1fr; }
-            .watch-list { grid-template-columns: 1fr; }
+        
+        .section-card {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
+        .section-card h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .vehicle-list-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .vehicle-item-mini {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 15px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        .vehicle-item-mini img {
+            width: 120px;
+            height: 80px;
+            border-radius: 4px;
+            object-fit: cover;
+        }
+        .vehicle-item-mini .info { flex: 1; }
+        .vehicle-item-mini h4 { font-size: 16px; margin-bottom: 5px; }
+        .vehicle-item-mini .meta { font-size: 13px; color: var(--gray); }
+        .vehicle-item-mini .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        .vehicle-item-mini .status {
+            font-size: 13px;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
+        .status.winning { background: #D4EDDA; color: #155724; }
+        .status.outbid { background: #F8D7DA; color: #721C24; }
     </style>
 </head>
 <body>
@@ -120,22 +131,26 @@
     <header class="header">
         <div class="header-top">
             <div class="container">
-                <span class="hotline">🌍 UXA Global</span>
+                <span>📞 +86 400-888-8888</span>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">◈</div>
+                    <span>UXA</span>
+                </a>
                 <div class="header-actions">
                     <a href="#" class="btn-login">Logout</a>
                 </div>
             </div>
         </div>
-        <nav class="header-main">
+        <nav class="nav-bar">
             <div class="container">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">◈</span>
-                    <span class="logo-text">UXA</span>
-                </a>
                 <ul class="nav-menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="search.html">Inventory</a></li>
-                    <li><a href="#" class="active">Dashboard</a></li>
+                    <li><a href="dashboard.html" style="background:var(--primary-light);">Dashboard</a></li>
                 </ul>
             </div>
         </nav>
@@ -143,133 +158,101 @@
 
     <!-- Dashboard -->
     <main class="dashboard-page">
-        <div class="container">
+        <div class="dashboard-container">
             <div class="dashboard-header">
-                <div class="dashboard-title">
-                    <h1>👤 My Dashboard</h1>
-                    <p>Welcome back, John!</p>
-                </div>
+                <h1>👤 My Dashboard</h1>
                 <a href="search.html" class="btn-register">Browse Vehicles</a>
             </div>
             
-            <div class="dashboard-layout">
-                <!-- Sidebar -->
-                <aside class="dashboard-sidebar">
-                    <div class="sidebar-user">
-                        <div class="user-avatar">👤</div>
-                        <div class="user-name">John Smith</div>
-                        <div class="user-email">john@example.com</div>
-                        <span class="user-tier">Premium Member</span>
-                    </div>
-                    <div class="sidebar-menu">
-                        <a href="#" class="active">📊 Overview</a>
-                        <a href="#">💰 My Bids</a>
-                        <a href="#">🏆 Won Vehicles</a>
-                        <a href="#">♡ Watch List</a>
-                        <a href="#">📦 Orders</a>
-                        <a href="#">💳 Payments</a>
-                        <a href="#">⚙️ Settings</a>
-                        <a href="#">❓ Help Center</a>
-                    </div>
+            <div class="stats-row">
+                <div class="stat-card">
+                    <div class="icon">⏳</div>
+                    <div class="value">3</div>
+                    <div class="label">Active Bids</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">🏆</div>
+                    <div class="value">12</div>
+                    <div class="label">Vehicles Won</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">💰</div>
+                    <div class="value">$45K</div>
+                    <div class="label">Total Spent</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">⭐</div>
+                    <div class="value">98%</div>
+                    <div class="label">Success Rate</div>
+                </div>
+            </div>
+            
+            <div class="dashboard-grid">
+                <aside class="sidebar-menu">
+                    <a href="#" class="active">📊 Overview</a>
+                    <a href="#">💰 My Bids</a>
+                    <a href="#">🏆 Won Vehicles</a>
+                    <a href="#">♡ Watch List</a>
+                    <a href="#">📦 Orders</a>
+                    <a href="#">💳 Payments</a>
+                    <a href="#">⚙️ Settings</a>
                 </aside>
                 
-                <!-- Content -->
-                <div class="dashboard-content">
-                    <!-- Stats -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-card-icon">⏳</div>
-                            <div class="stat-card-value">3</div>
-                            <div class="stat-card-label">Active Bids</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-card-icon">🏆</div>
-                            <div class="stat-card-value">12</div>
-                            <div class="stat-card-label">Vehicles Won</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-card-icon">💵</div>
-                            <div class="stat-card-value">$45K</div>
-                            <div class="stat-card-label">Total Spent</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-card-icon">⭐</div>
-                            <div class="stat-card-value">98%</div>
-                            <div class="stat-card-label">Success Rate</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Active Bids -->
-                    <div class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">Active Bids</h2>
-                            <a href="#" class="view-all">View All →</a>
-                        </div>
-                        <div class="activity-list">
-                            <div class="activity-item">
-                                <div class="activity-icon winning">⏳</div>
-                                <div class="activity-info">
-                                    <div class="activity-title">2023 Toyota Camry LE</div>
-                                    <div class="activity-meta">Lot #AB123 | Shanghai, China</div>
+                <div class="content-area">
+                    <div class="section-card">
+                        <h2>Active Bids</h2>
+                        <div class="vehicle-list-mini">
+                            <div class="vehicle-item-mini">
+                                <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=120&h=80&fit=crop" alt="">
+                                <div class="info">
+                                    <h4>2023 Toyota Camry LE</h4>
+                                    <div class="meta">Lot #AB123 | Shanghai</div>
                                 </div>
-                                <div class="activity-price">$9,200</div>
+                                <div class="price">$9,200</div>
+                                <span class="status winning">Winning</span>
                             </div>
-                            <div class="activity-item">
-                                <div class="activity-icon outbid">📉</div>
-                                <div class="activity-info">
-                                    <div class="activity-title">2022 Tesla Model 3</div>
-                                    <div class="activity-meta">Lot #AB456 | Beijing, China</div>
+                            <div class="vehicle-item-mini">
+                                <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=120&h=80&fit=crop" alt="">
+                                <div class="info">
+                                    <h4>2023 Tesla Model 3</h4>
+                                    <div class="meta">Lot #AB124 | Beijing</div>
                                 </div>
-                                <div class="activity-price">$11,500</div>
+                                <div class="price">$11,500</div>
+                                <span class="status outbid">Outbid</span>
                             </div>
-                            <div class="activity-item">
-                                <div class="activity-icon winning">⏳</div>
-                                <div class="activity-info">
-                                    <div class="activity-title">2021 BMW 530i</div>
-                                    <div class="activity-meta">Lot #AB789 | Guangzhou, China</div>
+                            <div class="vehicle-item-mini">
+                                <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=120&h=80&fit=crop" alt="">
+                                <div class="info">
+                                    <h4>2022 BMW 530i</h4>
+                                    <div class="meta">Lot #AB125 | Guangzhou</div>
                                 </div>
-                                <div class="activity-price">$8,800</div>
+                                <div class="price">$8,800</div>
+                                <span class="status winning">Winning</span>
                             </div>
                         </div>
                     </div>
                     
-                    <!-- Watch List -->
-                    <div class="content-section">
-                        <div class="section-header">
-                            <h2 class="section-title">My Watch List</h2>
-                            <a href="#" class="view-all">View All →</a>
-                        </div>
-                        <div class="watch-list">
-                            <a href="detail.html" class="watch-item">
-                                <div class="watch-img">
-                                    <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=200&h=120&fit=crop" alt="">
+                    <div class="section-card">
+                        <h2>My Watch List</h2>
+                        <div class="vehicle-list-mini">
+                            <div class="vehicle-item-mini">
+                                <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=120&h=80&fit=crop" alt="">
+                                <div class="info">
+                                    <h4>2021 Mercedes E300</h4>
+                                    <div class="meta">Lot #AB126 | Ends in 3h 45m</div>
                                 </div>
-                                <div class="watch-info">
-                                    <div class="watch-title">2023 Tesla Model 3 Long Range</div>
-                                    <div class="watch-price">$12,000</div>
-                                    <div class="watch-ends">Ends in 1h 15m</div>
+                                <div class="price">$11,200</div>
+                                <span class="status" style="background:#FFF3CD;color:#856404;">Watching</span>
+                            </div>
+                            <div class="vehicle-item-mini">
+                                <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=120&h=80&fit=crop" alt="">
+                                <div class="info">
+                                    <h4>2022 BYD Han EV</h4>
+                                    <div class="meta">Lot #AB127 | Ends in 2h 50m</div>
                                 </div>
-                            </a>
-                            <a href="detail.html" class="watch-item">
-                                <div class="watch-img">
-                                    <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=200&h=120&fit=crop" alt="">
-                                </div>
-                                <div class="watch-info">
-                                    <div class="watch-title">2022 BMW 530i M Sport</div>
-                                    <div class="watch-price">$9,800</div>
-                                    <div class="watch-ends">Ends in 4h 20m</div>
-                                </div>
-                            </a>
-                            <a href="detail.html" class="watch-item">
-                                <div class="watch-img">
-                                    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=200&h=120&fit=crop" alt="">
-                                </div>
-                                <div class="watch-info">
-                                    <div class="watch-title">2021 Mercedes E300</div>
-                                    <div class="watch-price">$11,200</div>
-                                    <div class="watch-ends">Ends in 3h 45m</div>
-                                </div>
-                            </a>
+                                <div class="price">$7,800</div>
+                                <span class="status" style="background:#FFF3CD;color:#856404;">Watching</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -279,10 +262,8 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-bottom">
-                <p>© 2026 UXA Global. All rights reserved.</p>
-            </div>
+        <div class="footer-bottom">
+            <p>© 2026 UXA Global. All rights reserved.</p>
         </div>
     </footer>
 </body>
