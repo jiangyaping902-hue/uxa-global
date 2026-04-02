@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UXA - Global Auto Auction Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span class="hotline">🌍 UXA Global | 📞 +86 400-888-8888</span>
+                <div class="header-actions">
+                    <select class="lang-select">
+                        <option>English</option>
+                        <option>中文</option>
+                        <option>Español</option>
+                    </select>
+                    <select class="currency-select">
+                        <option>USD $</option>
+                        <option>EUR €</option>
+                        <option>GBP £</option>
+                        <option>CNY ¥</option>
+                    </select>
+                    <a href="#" class="btn-login">Login</a>
+                    <a href="#" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+        <nav class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">◈</span>
+                    <span class="logo-text">UXA</span>
+                    <span class="logo-sub">Global Auction</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="search.html">Inventory</a></li>
+                    <li><a href="#">Auctions</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Sell</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="dashboard.html">My Account</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line">GLOBAL AUTO</span>
+                    <span class="title-line accent">AUCTION PLATFORM</span>
+                </h1>
+                <p class="hero-subtitle">50,000+ Quality Used Cars from China to the World</p>
+                
+                <div class="hero-process">
+                    <div class="process-step">
+                        <div class="step-num">01</div>
+                        <div class="step-title">Register</div>
+                        <div class="step-desc">Free Membership</div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-num">02</div>
+                        <div class="step-title">Find</div>
+                        <div class="step-desc">50K+ Vehicles</div>
+                    </div>
+                    <div class="process-arrow">→</div>
+                    <div class="process-step">
+                        <div class="step-num">03</div>
+                        <div class="step-title">Bid</div>
+                        <div class="step-desc">Live Auction</div>
+                    </div>
+                </div>
+
+                <div class="hero-search">
+                    <input type="text" placeholder="Search by Make, Model, VIN..." class="search-input">
+                    <button class="search-btn">Search</button>
+                </div>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-num">50K+</span>
+                        <span class="stat-label">Vehicles</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">120+</span>
+                        <span class="stat-label">Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-num">98%</span>
+                        <span class="stat-label">Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <div class="container">
+            <h2 class="section-title">Browse by Category</h2>
+            <div class="category-grid">
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">🚗</div>
+                    <span class="cat-name">Sedan</span>
+                    <span class="cat-count">12,450</span>
+                </a>
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">🚙</div>
+                    <span class="cat-name">SUV</span>
+                    <span class="cat-count">8,320</span>
+                </a>
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">🚐</div>
+                    <span class="cat-name">MPV</span>
+                    <span class="cat-count">3,280</span>
+                </a>
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">🛻</div>
+                    <span class="cat-name">Truck</span>
+                    <span class="cat-count">2,150</span>
+                </a>
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">🏍️</div>
+                    <span class="cat-name">Motorcycle</span>
+                    <span class="cat-count">1,890</span>
+                </a>
+                <a href="search.html" class="category-card">
+                    <div class="cat-icon">⚡</div>
+                    <span class="cat-name">Electric</span>
+                    <span class="cat-count">4,560</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brands -->
+    <section class="brands">
+        <div class="container">
+            <h2 class="section-title">Popular Makes</h2>
+            <div class="brand-grid">
+                <a href="search.html" class="brand-item">Toyota</a>
+                <a href="search.html" class="brand-item">Honda</a>
+                <a href="search.html" class="brand-item">BMW</a>
+                <a href="search.html" class="brand-item">Mercedes</a>
+                <a href="search.html" class="brand-item">Audi</a>
+                <a href="search.html" class="brand-item">BYD</a>
+                <a href="search.html" class="brand-item">Tesla</a>
+                <a href="search.html" class="brand-item">Nissan</a>
+                <a href="search.html" class="brand-item">Volkswagen</a>
+                <a href="search.html" class="brand-item">Hyundai</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Vehicles -->
+    <section class="featured">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Vehicles</h2>
+                <a href="search.html" class="view-all">View All →</a>
+            </div>
+            <div class="vehicle-grid">
+                <a href="detail.html" class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=250&fit=crop" alt="Car">
+                        <span class="vehicle-tag">Hot</span>
+                    </div>
+                    <div class="vehicle-info">
+                        <span class="vehicle-lot">Lot #AB123</span>
+                        <h3 class="vehicle-title">2023 Toyota Camry LE</h3>
+                        <div class="vehicle-meta">
+                            <span>📅 2023</span>
+                            <span>🚗 32K km</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="current-bid">$8,500</span>
+                            <span class="bid-info">Reserve</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <span class="watchers">👁️ 45 watching</span>
+                            <span class="ends">⏰ 2h 35m</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=250&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-info">
+                        <span class="vehicle-lot">Lot #AB124</span>
+                        <h3 class="vehicle-title">2023 Tesla Model 3</h3>
+                        <div class="vehicle-meta">
+                            <span>📅 2023</span>
+                            <span>🚗 18K km</span>
+                            <span>⚡ Electric</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="current-bid">$12,000</span>
+                            <span class="bid-info">Reserve</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <span class="watchers">👁️ 89 watching</span>
+                            <span class="ends">⏰ 1h 15m</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=250&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-info">
+                        <span class="vehicle-lot">Lot #AB125</span>
+                        <h3 class="vehicle-title">2022 BMW 530i M Sport</h3>
+                        <div class="vehicle-meta">
+                            <span>📅 2022</span>
+                            <span>🚗 45K km</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="current-bid">$9,800</span>
+                            <span class="bid-info">Reserve</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <span class="watchers">👁️ 56 watching</span>
+                            <span class="ends">⏰ 4h 20m</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="detail.html" class="vehicle-card">
+                    <div class="vehicle-img">
+                        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&h=250&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-info">
+                        <span class="vehicle-lot">Lot #AB126</span>
+                        <h3 class="vehicle-title">2021 Mercedes E300</h3>
+                        <div class="vehicle-meta">
+                            <span>📅 2021</span>
+                            <span>🚗 52K km</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-price">
+                            <span class="current-bid">$11,200</span>
+                            <span class="bid-info">Reserve</span>
+                        </div>
+                        <div class="vehicle-footer">
+                            <span class="watchers">👁️ 34 watching</span>
+                            <span class="ends">⏰ 3h 45m</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Auction Types -->
+    <section class="auction-types">
+        <div class="container">
+            <h2 class="section-title">Auction Types</h2>
+            <div class="type-grid">
+                <a href="search.html" class="type-card dealer">
+                    <div class="type-icon">🏭</div>
+                    <h3>Dealer Bulk Sale</h3>
+                    <p>Wholesale prices for dealers</p>
+                </a>
+                <a href="search.html" class="type-card electric">
+                    <div class="type-icon">⚡</div>
+                    <h3>Electric Vehicles</h3>
+                    <p>New energy cars专场</p>
+                </a>
+                <a href="search.html" class="type-card premium">
+                    <div class="type-icon">💎</div>
+                    <h3>Premium & Luxury</h3>
+                    <p>High-end vehicles</p>
+                </a>
+                <a href="search.html" class="type-card flash">
+                    <div class="type-icon">⏰</div>
+                    <h3>Flash Deals</h3>
+                    <p>Limited time offers</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership -->
+    <section class="membership">
+        <div class="container">
+            <h2 class="section-title light">Membership Plans</h2>
+            <div class="member-grid">
+                <div class="member-card free">
+                    <div class="member-tier">FREE</div>
+                    <div class="member-price">$0<span>/year</span></div>
+                    <ul class="member-features">
+                        <li>✓ Browse vehicles</li>
+                        <li>✓ Add to watchlist</li>
+                        <li>✓ Create alerts</li>
+                        <li>✗ Bid access</li>
+                    </ul>
+                    <a href="#" class="member-btn">Sign Up</a>
+                </div>
+                <div class="member-card basic">
+                    <div class="member-tier">BASIC</div>
+                    <div class="member-price">$199<span>/year</span></div>
+                    <ul class="member-features">
+                        <li>✓ All Free features</li>
+                        <li>✓ Bid on vehicles</li>
+                        <li>✓ 10 cars simultaneous</li>
+                        <li>✓ Export data</li>
+                    </ul>
+                    <a href="#" class="member-btn">Upgrade</a>
+                </div>
+                <div class="member-card premier">
+                    <div class="member-tier">PREMIER</div>
+                    <div class="member-price">$499<span>/year</span></div>
+                    <ul class="member-features">
+                        <li>✓ All Basic features</li>
+                        <li>✓ Unlimited bidding</li>
+                        <li>✓ Priority support</li>
+                        <li>✓ VIP services</li>
+                    </ul>
+                    <a href="#" class="member-btn">Upgrade</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <span class="logo-icon">◈</span>
+                        <span class="logo-text">UXA</span>
+                    </div>
+                    <p>Global auto auction platform connecting buyers worldwide with quality Chinese vehicles.</p>
+                    <div class="footer-social">
+                        <a href="#">📘</a>
+                        <a href="#">📸</a>
+                        <a href="#">🐦</a>
+                        <a href="#">💼</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <a href="search.html">Browse Inventory</a>
+                    <a href="#">How It Works</a>
+                    <a href="#">Auction Schedule</a>
+                    <a href="#">Locations</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Seller Services</h4>
+                    <a href="#">Sell Your Car</a>
+                    <a href="#">Dealer Registration</a>
+                    <a href="#">Business Solutions</a>
+                    <a href="#">API Access</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Buyer Services</h4>
+                    <a href="#">Membership</a>
+                    <a href="#">Bidding Guide</a>
+                    <a href="#">Shipping & Logistics</a>
+                    <a href="#">Buyer Protection</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <p>📞 +86 400-888-8888</p>
+                    <p>📧 support@uxa.global</p>
+                    <p>🌐 www.uxa.global</p>
+                    <p>📍 Shanghai, China</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 UXA Global. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Search - UXA Global</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-top">
+            <div class="container">
+                <span class="hotline">🌍 UXA Global | 📞 +86 400-888-8888</span>
+                <div class="header-actions">
+                    <select class="lang-select">
+                        <option>English</option>
+                        <option>中文</option>
+                    </select>
+                    <select class="currency-select">
+                        <option>USD $</option>
+                    </select>
+                    <a href="dashboard.html" class="btn-login">Login</a>
+                    <a href="#" class="btn-register">Register</a>
+                </div>
+            </div>
+        </div>
+        <nav class="header-main">
+            <div class="container">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">◈</span>
+                    <span class="logo-text">UXA</span>
+                    <span class="logo-sub">Global Auction</span>
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="search.html" class="active">Inventory</a></li>
+                    <li><a href="#">Auctions</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Sell</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="dashboard.html">My Account</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Search Page -->
+    <main class="search-page">
+        <div class="container">
+            <!-- Search Header -->
+            <div class="search-header">
+                <h1>🔍 Search Results</h1>
+                <p class="results-count">1,234 vehicles found for "Toyota"</p>
+            </div>
+
+            <!-- Filters -->
+            <div class="search-filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Make</label>
+                        <select>
+                            <option>All Makes</option>
+                            <option>Toyota</option>
+                            <option>Honda</option>
+                            <option>BMW</option>
+                            <option>Mercedes</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Model</label>
+                        <select>
+                            <option>All Models</option>
+                            <option>Camry</option>
+                            <option>Accord</option>
+                            <option>Civic</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Year From</label>
+                        <select>
+                            <option>2020</option>
+                            <option>2019</option>
+                            <option>2018</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Year To</label>
+                        <select>
+                            <option>2024</option>
+                            <option>2023</option>
+                            <option>2022</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price</label>
+                        <select>
+                            <option>All Prices</option>
+                            <option>Under $5,000</option>
+                            <option>$5,000 - $10,000</option>
+                            <option>$10,000 - $20,000</option>
+                            <option>Over $20,000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Mileage</label>
+                        <select>
+                            <option>Any</option>
+                            <option>Under 30,000 km</option>
+                            <option>30,000 - 50,000 km</option>
+                            <option>Over 50,000 km</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Transmission</label>
+                        <select>
+                            <option>All</option>
+                            <option>Automatic</option>
+                            <option>Manual</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Fuel Type</label>
+                        <select>
+                            <option>All</option>
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>Electric</option>
+                            <option>Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Emission</label>
+                        <select>
+                            <option>All</option>
+                            <option>Euro 6</option>
+                            <option>Euro 5</option>
+                            <option>Euro 4</option>
+                        </select>
+                    </div>
+                    <button class="filter-btn">Apply Filters</button>
+                </div>
+            </div>
+
+            <!-- Quick Filters -->
+            <div class="quick-filters">
+                <a href="#" class="quick-tag active">All (1,234)</a>
+                <a href="#" class="quick-tag">Sedan (456)</a>
+                <a href="#" class="quick-tag">SUV (389)</a>
+                <a href="#" class="quick-tag">Under $5k (178)</a>
+                <a href="#" class="quick-tag">Under 50k km (423)</a>
+                <a href="#" class="quick-tag">Electric (156)</a>
+                <a href="#" class="quick-tag">Featured (45)</a>
+            </div>
+
+            <!-- Sort & View -->
+            <div class="search-toolbar">
+                <div class="sort-options">
+                    <span>Sort by:</span>
+                    <select>
+                        <option>Ending Soon</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Newest First</option>
+                        <option>Mileage: Low to High</option>
+                    </select>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">▦ Grid</button>
+                    <button class="view-btn" data-view="list">☰ List</button>
+                </div>
+            </div>
+
+            <!-- Vehicle Grid -->
+            <div class="vehicle-list">
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=400&h=300&fit=crop" alt="Car">
+                        <span class="vehicle-badge">Hot</span>
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB123</span>
+                        <h3>2023 Toyota Camry LE 4-Door Sedan</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2023</span>
+                            <span>🚗 32,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⛽ Petrol</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Shanghai, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$8,500</span>
+                                <span class="starting">Start: $7,500</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="reserve">Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 45 watching</span>
+                            <span>⏰ Ends in 2h 35m</span>
+                            <span>📊 12 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $9,000</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=400&h=300&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB124</span>
+                        <h3>2023 Tesla Model 3 Long Range</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2023</span>
+                            <span>🚗 18,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⚡ Electric</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Beijing, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$12,000</span>
+                                <span class="starting">Start: $10,000</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="reserve">Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 89 watching</span>
+                            <span>⏰ Ends in 1h 15m</span>
+                            <span>📊 23 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $13,000</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1555215695-3004980ad54e?w=400&h=300&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB125</span>
+                        <h3>2022 BMW 530i M Sport Package</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2022</span>
+                            <span>🚗 45,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⛽ Petrol</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Guangzhou, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$9,800</span>
+                                <span class="starting">Start: $8,500</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="reserve">Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 56 watching</span>
+                            <span>⏰ Ends in 4h 20m</span>
+                            <span>📊 18 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $10,500</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?w=400&h=300&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB126</span>
+                        <h3>2021 Mercedes-Benz E300 Luxury</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2021</span>
+                            <span>🚗 52,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⛽ Petrol</span>
+                            <span>🌿 Euro 6</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Shenzhen, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$11,200</span>
+                                <span class="starting">Start: $9,500</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="reserve">Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 34 watching</span>
+                            <span>⏰ Ends in 3h 45m</span>
+                            <span>📊 9 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $12,000</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=400&h=300&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB127</span>
+                        <h3>2020 Honda CR-V 2.0L Hybrid</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2020</span>
+                            <span>🚗 38,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⚡ Hybrid</span>
+                            <span>🌿 Euro 5</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Chengdu, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$6,500</span>
+                                <span class="starting">Start: $5,500</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="no-reserve">No Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 28 watching</span>
+                            <span>⏰ Ends in 5h 10m</span>
+                            <span>📊 7 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $7,000</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="detail.html" class="vehicle-item">
+                    <div class="vehicle-image">
+                        <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?w=400&h=300&fit=crop" alt="Car">
+                    </div>
+                    <div class="vehicle-details">
+                        <span class="lot-number">Lot #AB128</span>
+                        <h3>2022 BYD Han EV Premium</h3>
+                        <div class="vehicle-specs">
+                            <span>📅 2022</span>
+                            <span>🚗 25,000 km</span>
+                            <span>⚙️ Auto</span>
+                            <span>⚡ Electric</span>
+                        </div>
+                        <div class="vehicle-location">
+                            📍 Shanghai, China
+                        </div>
+                        <div class="vehicle-bid">
+                            <div class="bid-price">
+                                <span class="current">$7,800</span>
+                                <span class="starting">Start: $6,500</span>
+                            </div>
+                            <div class="bid-status">
+                                <span class="reserve">Reserve</span>
+                            </div>
+                        </div>
+                        <div class="vehicle-meta">
+                            <span>👁️ 42 watching</span>
+                            <span>⏰ Ends in 2h 50m</span>
+                            <span>📊 15 bids</span>
+                        </div>
+                        <div class="vehicle-actions">
+                            <button class="btn-bid">Bid $8,500</button>
+                            <button class="btn-watch">♡ Watch</button>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn">← Prev</a>
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn">4</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-btn">62</a>
+                <a href="#" class="page-btn">Next →</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>© 2026 UXA Global. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
